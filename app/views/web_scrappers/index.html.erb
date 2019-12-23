@@ -1,0 +1,13 @@
+<% flash.each do |key, value| %>
+  <%= content_tag :div, value, class: "flash #{key}" %>
+<% end %>
+
+<h1>WebScrappers#index</h1>
+
+<% if File.exists?(Rails.root.join('results.json')) %>
+  <p>You can download the file here</p>
+  <%= link_to 'Results', download_path %>
+<% end %>
+<br>
+<br>
+<%= link_to 'Start Scrap', new_web_scrapper_path %>
